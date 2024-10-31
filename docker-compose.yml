@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  service-a:
+    build:
+      context: ./service-a
+    ports:
+      - "5000:5000"
+
+  service-b:
+    build:
+      context: ./service-b/service-b
+    ports:
+      - "3000:3000"
+    depends_on:
+      - service-a
